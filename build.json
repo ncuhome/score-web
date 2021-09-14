@@ -1,0 +1,19 @@
+{
+  "esbuild": {
+    "target": ["es2015"]
+  },
+  "hash": true,
+  "modularImportRuntime": true,
+  "plugins": [
+    [
+      "build-plugin-antd",
+      {
+        "importOptions": {
+          "libraryName": "antd-mobile",
+          "libraryDirectory": "es",
+          "style": true
+        }
+      }
+    ]
+  ]
+}

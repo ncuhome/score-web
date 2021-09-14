@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
+div {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
+
+* {
+  transition: all 0.18s var(--bezier);
+}
+
+:root {
+  --bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-color: #267fe3;
+}
+
+:root[data-theme='light'] {
+  --input-box-shadow: 0px 0px 3px rgba(0, 26, 65, 0.07), 0px 3px 5px rgba(24, 63, 102, 0.06),
+    0px 7px 14px 3px rgba(1, 4, 11, 0.04);
+
+  --input-border-color: #fdfeff;
+  --input-placeholder-color: #bdbdbd;
+  --input-background-color: #fff;
+  --input-text-color: #676767;
+
+  --back-title-color: #878787;
+  --title-color: #2e2e2e;
+  --text-color: #4d4d4d;
+  --progress-background: #eaeaea;
+  --background-color: #fff;
+
+  --button-icon: #656565;
+  --pop-color: rgb(248, 244, 244);
+}
+
+:root[data-theme='dark'] {
+  --input-box-shadow: 0px 0px 3px rgba(0, 26, 65, 0.07), 0px 3px 5px rgba(24, 63, 102, 0.06),
+    0px 7px 14px 3px rgba(1, 4, 11, 0.04);
+
+  --input-border-color: #505050;
+  --input-placeholder-color: #9c9c9c;
+  --input-background-color: #3a3a3a;
+  --input-text-color: #e6e6e6;
+
+  --back-title-color: #c1c1c1;
+  --title-color: #fff;
+  --text-color: #c1c1c1;
+  --progress-background: #494949;
+  --background-color: #2e2e2e;
+
+  --button-icon: #fff;
+  --pop-color: rgb(58, 58, 58);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: transparent;
+}
+
+.text {
+  color: var(--title-color);
+  text-align: center;
+  opacity: 0.4;
+  font-size: 13px;
+  margin: 14px auto;
+}
