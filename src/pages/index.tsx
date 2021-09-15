@@ -31,7 +31,7 @@ const App = () => {
         <WhiteSpace size="lg" />
 
         <WingBlank>
-          <Button
+          {/* <Button
             type="primary"
             style={{ background: '#1874ff' }}
             onClick={() => {
@@ -39,7 +39,7 @@ const App = () => {
             }}
           >
             点击确认
-          </Button>
+          </Button> */}
         </WingBlank>
       </>
 

@@ -1,4 +1,4 @@
-
+<!-- 
 # 电子报到单
 
 ## 背景
@@ -17,4 +17,4 @@ $ npm install
 $ npm start  # visit http://localhost:3333
 ```
 
-[More docs](https://ice.work/docs/guide/about).
+[More docs](https://ice.work/docs/guide/about). -->

@@ -41,6 +41,6 @@ jobs:
        folder: build
        accessKeyId: ${{ secrets.ACCESSKEYID }}
        accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
-       bucket: ncu-report
-       endpoint: oss-cn-hangzhou.aliyuncs.com
+       bucket: incu-score
+       endpoint: oss-cn-beijing.aliyuncs.com
        skipSetting: true
