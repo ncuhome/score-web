@@ -6,6 +6,7 @@ import store from '@/store';
 import get from 'lodash.get';
 import { useAppReady } from 'mincu-hooks';
 import axios from 'axios';
+import './style.css'
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -330,6 +331,8 @@ function Header() {
   const getName = () => {
     const sex = dataModule.appData.user.profile.entireProfile.base_info.xb.dm ? '👨‍🎓' : '👩‍🎓';
     const { name } = dataModule.appData.user.profile.basicProfile;
+    // const sex ='nan'
+    // const name = 'qtf'
     return `${sex} ${name}`;
   };
 
@@ -366,11 +369,11 @@ function Header() {
           <h3 style={{ textAlign: 'center' }}>
             军训不计入GPA
           </h3>
-          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
             {
               res.scores[0].map(item => {
                 return (
-                  <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                  <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                 )
               })
             }
@@ -382,11 +385,11 @@ function Header() {
           <h3 style={{ textAlign: 'center' }}>
             GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[1]]}</span>
           </h3>
-          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
             {
               res.scores[1].map(item => {
                 return (
-                  <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                  <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                 )
               })
             }
@@ -397,11 +400,11 @@ function Header() {
           <h3 style={{ textAlign: 'center' }}>
             GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[2]]}</span>
           </h3>
-          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+          <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
             {
               res.scores[2].map(item => {
                 return (
-                  <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                  <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                 )
               })
             }
@@ -424,11 +427,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               军训不计入GPA
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[0].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -440,11 +443,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[1]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[1].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -455,11 +458,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[2]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[2].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -483,11 +486,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[3]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[3].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -497,11 +500,11 @@ function Header() {
 
           <div className="term1-container">
             GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[4]]}</span>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[4].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -512,11 +515,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[5]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[5].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -540,11 +543,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[6]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[3].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -556,11 +559,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[7]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[7].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -571,11 +574,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[8]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[8].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -599,11 +602,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[9]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[9].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -615,11 +618,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[10]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[10].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -630,11 +633,11 @@ function Header() {
             <h3 style={{ textAlign: 'center' }}>
               GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[11]]}</span>
             </h3>
-            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
+            <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
               {
                 res.scores[11].map(item => {
                   return (
-                    <Item extra={item.score + ' | ' + item.credit}>{item.lesson_name}</Item>
+                    <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
                   )
                 })
               }
@@ -660,9 +663,9 @@ function Header() {
             style={{
               background: '#1874ff',
               marginTop: '-15px',
-              width: '96vw',
-              height: '35px',
-              marginLeft: '-3.8vw',
+              width: '95.7867vw',
+              height: '38px',
+              marginLeft: '-3.9vw',
               borderRadius: '0 0 15px 15px'
             }}
             selectedIndex={0}

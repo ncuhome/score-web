@@ -11,6 +11,7 @@ const MincuProvider: React.FC = ({ children = null }) => {
     // eslint-disable-next-line no-alert
     alert('请使用南大家园打开');
   });
+  // const [isReady,setIsReady] = useState(true)
 
   // const [isMine, setIsMine] = useState(false);
 
