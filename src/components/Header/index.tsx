@@ -380,7 +380,7 @@ function Header() {
 
         <div className="term1-container">
           <h3 style={{ textAlign: 'center' }}>
-            GPA:{res.terms_gpa_split[res.terms[1]]}
+            GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[1]]}</span>
           </h3>
           <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
             {
@@ -395,7 +395,7 @@ function Header() {
 
         <div className="term2-container">
           <h3 style={{ textAlign: 'center' }}>
-            GPA:{res.terms_gpa_split[res.terms[2]]}
+            GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[2]]}</span>
           </h3>
           <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
             {
@@ -422,7 +422,6 @@ function Header() {
         >
           <div className="term0-container">
             <h3 style={{ textAlign: 'center' }}>
-              {/* GPA:{res.terms_gpa_split[res.terms[0]]} */}
               军训不计入GPA
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
@@ -439,7 +438,7 @@ function Header() {
 
           <div className="term1-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[1]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[1]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -454,7 +453,7 @@ function Header() {
 
           <div className="term2-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[2]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[2]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -482,7 +481,7 @@ function Header() {
         >
           <div className="term0-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[3]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[3]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -497,7 +496,7 @@ function Header() {
 
 
           <div className="term1-container">
-            GPA:{res.terms_gpa_split[res.terms[4]]}
+            GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[4]]}</span>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
                 res.scores[4].map(item => {
@@ -511,7 +510,7 @@ function Header() {
 
           <div className="term2-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[5]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[5]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -539,7 +538,7 @@ function Header() {
         >
           <div className="term0-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[6]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[6]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -555,7 +554,7 @@ function Header() {
 
           <div className="term1-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[7]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[7]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -570,7 +569,7 @@ function Header() {
 
           <div className="term2-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[8]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[8]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -598,7 +597,7 @@ function Header() {
         >
           <div className="term0-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[9]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[9]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -614,7 +613,7 @@ function Header() {
 
           <div className="term1-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[10]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[10]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -629,7 +628,7 @@ function Header() {
 
           <div className="term2-container">
             <h3 style={{ textAlign: 'center' }}>
-              GPA:{res.terms_gpa_split[res.terms[11]]}
+              GPA:<span style={{color:'#1874ff'}}>{res.terms_gpa_split[res.terms[11]]}</span>
             </h3>
             <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>成绩 | 学分</span></p></>)} className="my-list">
               {
@@ -657,19 +656,34 @@ function Header() {
           extra={dataModule.appData.user.profile.basicProfile.department}
         />
         <Card.Body>
-          <SegmentedControl selectedIndex={0} values={['大一', '大二', '大三', '大四']} onChange={handleGrade} />
-
+          <SegmentedControl
+            style={{
+              background: '#1874ff',
+              marginTop: '-15px',
+              width: '96vw',
+              height: '35px',
+              marginLeft: '-3.8vw',
+              borderRadius: '0 0 15px 15px'
+            }}
+            selectedIndex={0}
+            values={['大一', '大二', '大三', '大四']}
+            onChange={handleGrade}
+          />
           {listElement}
-
         </Card.Body>
         {/* <Card.Footer
           content={
             <>
-              当前状态: <span style={{ color: state.labelColor }}>{state.status}</span>
             </>
           }
         /> */}
       </Card>
+
+      {/* <Card>
+        <Card.Body>
+        </Card.Body>
+
+      </Card> */}
     </WingBlank>
   );
 }
