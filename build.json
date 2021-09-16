@@ -1,9 +1,7 @@
 {
-  "esbuild": {
-    "target": ["es2015"]
-  },
   "hash": true,
   "modularImportRuntime": true,
+  "vite": true,
   "plugins": [
     [
       "build-plugin-antd",
