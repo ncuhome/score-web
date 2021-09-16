@@ -662,10 +662,10 @@ function Header() {
           <SegmentedControl
             style={{
               background: '#1874ff',
-              marginTop: '-15px',
-              width: '95.7867vw',
+              marginTop: '-15.5px',
+              width: '109.5%',
               height: '38px',
-              marginLeft: '-3.9vw',
+              marginLeft: '-4vw',
               borderRadius: '0 0 15px 15px'
             }}
             selectedIndex={0}
