@@ -50,7 +50,7 @@ function Header() {
         'Authorization': 'passport ' + token
       }
     }).then(res => {
-      alert(res.data.terms_gpa[2020 - 2021 - 1])
+      // alert(res.data.terms) 
       setRes(res.data)
     }).catch(err => {
       // alert(err)
@@ -87,18 +87,23 @@ function Header() {
             return (
               res.terms[termIndex[i]] ?
                 (<div className="term0-container">
-                  <h3 style={{ textAlign: 'center' }}>
+                  <h3 style={{ textAlign: 'center', marginBottom: '0px' }}>
                     {
                       termIndex[i] === 0 ?
                         '军训不计入GPA' : (<>GPA:<span style={{ color: '#1874ff' }}>{res.terms_gpa_split[res.terms[termIndex[i]]]}</span></>)
                     }
-
                   </h3>
-                  <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;&nbsp;成绩</span></p></>)} className="my-list">
+                  <List renderHeader={() => (<><p>科目<span style={{ float: 'right' }}>学分&nbsp;&nbsp;&nbsp;成绩/绩点</span></p></>)} className="my-list">
                     {
                       res.scores[termIndex[i]].map(item => {
                         return (
-                          <Item extra={item.credit + '      ' + item.score}>{item.lesson_name}</Item>
+                          <Item
+                            extra={item.credit.toFixed(1) + '     ' + item.score + '/' + item.grade_point.toFixed(1) + ' '}
+                            style={{
+                              textAlign:'left'
+                            }}>
+                            {item.lesson_name}
+                          </Item>
                         )
                       })
                     }

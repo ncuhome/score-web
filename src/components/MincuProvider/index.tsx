@@ -8,6 +8,9 @@ const MincuProvider: React.FC = ({ children = null }) => {
     alert('请使用南大家园打开');
   });
 
+  // return <>{children}</>;
+  // pc测试
+
   if (isReady) {
     return <>{children}</>;
   }
