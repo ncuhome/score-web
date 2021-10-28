@@ -9,3 +9,18 @@ export const getBasic = async (): Promise<any> => {
     method: 'get',
   });
 };
+
+export const fetchGrades = (url: string, grade: number, semester: number) => {
+  return new Promise(((resolve) => {
+    network.fetch({
+      url,
+      method: 'get',
+      params: {
+        grade,
+        semester,
+      },
+    }).then((res) => {
+      resolve(res.data);
+    });
+  }));
+};

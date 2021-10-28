@@ -1,5 +1,12 @@
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px    100% = 16px
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .5px;
+  line-height: 1.4;
 }
 
 div {
@@ -14,7 +21,15 @@ div {
 
 :root {
   --bezier: cubic-bezier(0.4, 0, 0.2, 1);
-  --primary-color: #267fe3;
+  --primary-light: #39ddfa;
+  --primary: #00abdf;
+  --primary-dark: #008ada;
+
+  --white: #FFFFFF;
+  --greyLight-1: #ebf5fc;
+  --greyLight-2: #d5e0f3;
+  --greyLight-3: #c1d9f0;
+  --greyDark: #646b8c;
 }
 
 :root[data-theme='light'] {
@@ -58,6 +73,7 @@ div {
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .text {
@@ -66,4 +82,10 @@ body {
   opacity: 0.4;
   font-size: 13px;
   margin: 14px auto;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }

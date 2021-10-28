@@ -1,17 +1,5 @@
 {
   "hash": true,
   "modularImportRuntime": true,
-  "vite": true,
-  "plugins": [
-    [
-      "build-plugin-antd",
-      {
-        "importOptions": {
-          "libraryName": "antd-mobile",
-          "libraryDirectory": "es",
-          "style": true
-        }
-      }
-    ]
-  ]
+  "vite": true
 }

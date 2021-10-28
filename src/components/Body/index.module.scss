@@ -1,0 +1,76 @@
+
+.titleText{
+  font-size: 18px;
+  font-weight: 600;
+  color: #7F9ADF;
+}
+
+.dataText{
+  font-size: 16px;
+  font-weight: 400;
+  color: #325BC6;
+}
+
+
+.gradesLines{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow-y: auto;
+  height: 100%;
+  box-shadow: inset 4px 4px 5px var(--greyLight-2),
+  inset -4px -4px 8px var(--white);
+  background: var(--greyLight-1);
+  border-radius: 3rem;
+  padding: 1.5rem;
+
+  .gradesLineHeader{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    height: 4rem;
+
+    .subjectTitle{
+      flex: 1;
+      @extend .titleText;
+      text-align: start;
+    }
+    .fractionTitle{
+      width: 7rem;
+      @extend .titleText;
+      text-align: center;
+    }
+    .creditsTitle{
+      width: 6rem;
+      @extend .titleText;
+      text-align: center;
+    }
+  }
+
+  .gradesLineBody{
+    display:flex;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 1.8rem;
+    font-size: 16px;
+
+    .subjectText{
+      flex: 1;
+      @extend .dataText;
+      text-align: start;
+    }
+    .fractionText{
+      width: 7rem;
+      @extend .dataText;
+      text-align: center;
+    }
+    .creditsText{
+      width: 6rem;
+      @extend .dataText;
+      text-align: center;
+      color:#7F9ADF;
+    }
+  }
+}

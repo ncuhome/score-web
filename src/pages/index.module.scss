@@ -1,0 +1,56 @@
+.rootCon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #D5E0F3;//#D5E0F3
+  padding: 15px 15px;
+
+  .header{
+    height: 110px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .body{
+    display: block;
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    margin: 2rem 1.5rem 1rem;
+    border-radius: 2rem;
+    background: var(--greyLight-1);
+    box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
+    transition: all 250ms ease-in-out;
+    padding: 1rem;
+  }
+
+  .footer{
+    height: 120px;
+    width: 100%;
+  }
+}
+
+.fade {
+  animation: fade 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+

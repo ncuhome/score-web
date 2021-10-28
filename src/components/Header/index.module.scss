@@ -1,0 +1,52 @@
+.headerCon{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+
+  .selection{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    height: 13rem;
+    background: var(--greyLight-1);
+    box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid white;
+    border-radius: 20px;
+
+    .gradeSel{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: inset 8px 8px 10px #d5e0f3,
+      inset -4px -4px 8px #FFFFFF;
+      height: 4rem;
+      margin-bottom: 1rem;
+      border-radius: 2rem;
+    }
+
+    .semesterSel{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: inset 8px 8px 10px var(--greyLight-2),
+      inset -4px -4px 8px var(--white);
+      height: 4rem;
+      border-radius: 2rem;
+
+    }
+  }
+}
+
+.btn{
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 6px 6px 8px #d5e0f3,
+  -6px -6px 8px #FFF;
+  background: #2FCBF3;
+}

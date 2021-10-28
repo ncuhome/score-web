@@ -5,14 +5,13 @@
   "devDependencies": {
     "@iceworks/spec": "^1.0.0",
     "@types/google.analytics": "^0.0.40",
+    "@types/mockjs": "^1.0.4",
     "@types/react": "^16.9.20",
     "@types/react-dom": "^16.9.5",
     "eslint": "^6.8.0",
     "ice.js": "2.0.0-rc.3",
     "mincu-debug": "2.1.0-alpha.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-recommended": "^5.0.0",
-    "stylelint-prettier": "^1.2.0"
+    "mockjs": "^1.1.0"
   },
   "scripts": {
     "start": "mincud 'icejs start'",
@@ -42,11 +41,7 @@
   "private": true,
   "originTemplate": "@alifd/scaffold-simple",
   "dependencies": {
-    "ahooks": "^2.10.8",
-    "antd-mobile": "^2.3.4",
-    "axios": "^0.21.1",
     "blueimp-md5": "^2.18.0",
-    "build-plugin-antd": "^0.1.1",
     "clsx": "^1.1.1",
     "ga-lite": "^2.1.0",
     "ice": "^3.7.60",
