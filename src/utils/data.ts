@@ -1,11 +1,13 @@
-const scoreRes = {
+
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+export const scoreRes = {
   xh: '6105119047',
   terms_gpa: {
-    '2019-2020-1': '2.110',
+    '2019-2020-1': '2.510',
     '2019-2020-2': '2.513',
     '2021-2022-1': '3.000',
-    '2020-2021-1': '2.457',
-    '2020-2021-2': '2.387',
+    '2020-2021-1': '2.757',
+    '2020-2021-2': '2.987',
   },
   msg: '完成',
   total: 7,
@@ -741,12 +743,40 @@ const scoreRes = {
   ],
   credits: 120.0,
   terms_gpa_split: {
-    '2019-2020-1': '2.110',
-    '2019-2020-2': '2.513',
-    '2020-2021-0': '2.433',
-    '2020-2021-1': '2.459',
-    '2020-2021-2': '2.387',
+    '2019-2020-1': '2.710',
+    '2019-2020-2': '2.913',
+    '2020-2021-0': '2.833',
+    '2020-2021-1': '2.959',
+    '2020-2021-2': '2.787',
     '2021-2022-0': '3.000',
   },
   status: 1,
-};
+} as ResType;
+
+export interface ResType {
+  xh: string;
+  terms_gpa: {
+    [time: string]: string;
+  };
+  msg: string;
+  total: number;
+  xm: string;
+  terms: string[];
+  scores: ScoreType[][];
+  credits: number;
+  terms_gpa_split: {
+    [time: string]: string;
+  };
+}
+
+export interface ScoreType{
+  exam_type: string;
+  score: number;
+  include: boolean;
+  lesson_name: string;
+  course_type: string;
+  grade_point: number;
+  lesson_type: string;
+  term: string;
+  credit: number;
+}

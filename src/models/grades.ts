@@ -1,8 +1,16 @@
-export interface CurTabSel{
-  scores: [];
+import type { ScoreType } from '@/utils/data';
+
+export interface UserGrades{
+  username: string;
+  terms_gpa: {
+    [time: string]: string;
+  };
+  scores: ScoreType[][];
 }
 
-const state: CurTabSel = {
+const state: UserGrades = {
+  username: '',
+  terms_gpa: {},
   scores: [],
 };
 

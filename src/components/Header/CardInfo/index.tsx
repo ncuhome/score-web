@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import clsx from 'clsx';
+import { useGrades } from '@/hooks/useGrades';
+import store from '@/store';
 
 const CardInfo = () => {
+  const { getGPA, getUsername } = useGrades();
+  const curTabSel = store.useModelState('curTabSel');
+  const [gpa, setGpa] = useState('');
+
+  useEffect(() => {
+    console.log('render');
+    const res = getGPA(curTabSel);
+    setGpa(res);
+  }, [curTabSel.gradeSel, curTabSel.semesterSel]);
   return (
     <div className={styles.cardInfo}>
       <div className={styles.cardPercent}>
@@ -20,10 +31,10 @@ const CardInfo = () => {
         <div className={clsx([styles.circle, styles.circleSmall])} />
         <div className={styles.cardNumber}>
           <div className={styles.GPAText}>GPA</div>
-          <div className={styles.pointsText}>3.000</div>
+          <div className={styles.pointsText}>{gpa}</div>
         </div>
       </div>
-      <div className={styles.nameText}>李清栋</div>
+      <div className={styles.nameText}>{getUsername()}</div>
     </div>
   );
 };

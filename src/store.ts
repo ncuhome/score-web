@@ -1,12 +1,12 @@
 import { createStore } from '@ice/store';
 import common from '@/models/common';
 import curTabSel from '@/models/curTabSel';
-import scores from '@/models/scores';
+import grades from '@/models/grades';
 
 const store = createStore({
   common,
   curTabSel,
-  scores,
+  grades,
 });
 
 export default store;
