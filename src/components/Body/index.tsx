@@ -10,8 +10,10 @@ const Body = () => {
   const [grades, setGrades] = useState<ScoreType[]>([]);
 
   useEffect(() => {
-    const res = getGrades(curTabSel) as any[];
-    setGrades(res);
+    const res = getGrades(curTabSel);
+    if (res.exist) {
+      setGrades(res.data as ScoreType[]);
+    }
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
   return (

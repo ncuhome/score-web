@@ -1,27 +1,26 @@
 import React from 'react';
 import styles from './index.module.scss';
 import clsx from 'clsx';
-import { SelProps } from '@/components/SelTab/tabItemUtils';
+import { useTabSelClick } from '@/components/SelTab/tabItemUtils';
 import type { CurTabSel } from '@/models/curTabSel';
+import store from '@/store';
 
 interface SelTabProps {
-  desc: SelProps['desc'];
+  desc: CurTabSel['gradeSel']|CurTabSel['semesterSel'];
   type?: 'gra'|'sem';
-  curTabSel: CurTabSel;
-  onClick?: () => void;
 }
 
-const SelTab: React.FC<SelTabProps> = ({ desc, type = 'gra', curTabSel, onClick }) => {
+const SelTab: React.FC<SelTabProps> = ({ desc, type = 'gra' }) => {
+  const curTabSel = store.useModelState('curTabSel');
+  const { semesterSelClick, gradeSelClick } = useTabSelClick();
 
-  let active;
-  if (type === 'gra') {
-    active = curTabSel.gradeSel === desc;
-  } else {
-    active = curTabSel.semesterSel === desc;
-  }
-
+  const onClick = type === 'gra' ? () => gradeSelClick(desc as CurTabSel['gradeSel']) : () => semesterSelClick(desc as CurTabSel['semesterSel']);
+  const active = type === 'gra' ? curTabSel.gradeSel === desc : curTabSel.semesterSel === desc;
   return (
-    <div className={clsx([styles.selTab, active && styles.selTabActive])} onClick={onClick}>
+    <div
+      className={clsx([styles.selTab, active && styles.selTabActive])}
+      onClick={onClick}
+    >
       {desc}
     </div>
   );

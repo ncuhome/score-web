@@ -13,7 +13,9 @@ const CardInfo = () => {
 
   useEffect(() => {
     const res = getGPA(curTabSel);
-    setGpa(res);
+    if (res.exist) {
+      setGpa(res.data as string);
+    }
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
   const gpaNum = gpa ? parseFloat(gpa) : 0;
@@ -27,8 +29,15 @@ const CardInfo = () => {
               <stop offset="100%" stopColor="var(--primary-light)" />
             </radialGradient>
           </defs>
-          {/* eslint-disable-next-line max-len */}
-          <circle className={styles.svgCircle} style={{ strokeDashoffset: gpaNum * ratio }} cx="50" cy="50" r="35" stroke="url(#gradient)" id="circle" />
+          <circle
+            className={styles.svgCircle}
+            style={{ strokeDashoffset: gpaNum * ratio }}
+            cx="50"
+            cy="50"
+            r="35"
+            stroke="url(#gradient)"
+            id="circle"
+          />
         </svg>
         <div className={styles.circle} />
         <div className={clsx([styles.circle, styles.circleMedium])} />
