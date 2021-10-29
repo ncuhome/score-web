@@ -38,7 +38,7 @@ export const scoreRes = {
     [
       {
         exam_type: '正常考试',
-        score: 63,
+        score: 88,
         include: true,
         lesson_name: 'C程序设计实验',
         course_type: '学科基础课',
@@ -49,7 +49,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 67,
+        score: 78,
         include: true,
         lesson_name: '计算机应用基础',
         course_type: '通识课（Ⅰ类）',
@@ -60,7 +60,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 57,
+        score: 79,
         include: true,
         lesson_name: '计算机应用基础实验',
         course_type: '通识课（Ⅰ类）',
@@ -93,7 +93,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 65,
+        score: 83,
         include: true,
         lesson_name: '大学英语（1）',
         course_type: '通识课（Ⅰ类）',
@@ -104,7 +104,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 78,
+        score: 72,
         include: true,
         lesson_name: '军事理论',
         course_type: '通识课（Ⅰ类）',
@@ -126,7 +126,7 @@ export const scoreRes = {
       },
       {
         exam_type: '补考一',
-        score: 69,
+        score: 81,
         include: true,
         lesson_name: '计算机应用基础实验',
         course_type: '通识课（Ⅰ类）',
@@ -148,7 +148,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 66,
+        score: 85,
         include: true,
         lesson_name: 'C程序设计',
         course_type: '学科基础课',
@@ -159,7 +159,7 @@ export const scoreRes = {
       },
       {
         exam_type: '正常考试',
-        score: 67,
+        score: 78,
         include: true,
         lesson_name: '工程制图（Ⅲ）',
         course_type: '学科基础课',
@@ -172,7 +172,7 @@ export const scoreRes = {
     [
       {
         exam_type: '补考一',
-        score: 50,
+        score: 70,
         include: true,
         lesson_name: '线性代数',
         course_type: '学科基础课',
@@ -429,7 +429,7 @@ export const scoreRes = {
     [
       {
         exam_type: '正常考试',
-        score: 47,
+        score: 74,
         include: true,
         lesson_name: '低频电子线路',
         course_type: '学科基础课',

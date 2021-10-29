@@ -1,6 +1,7 @@
 import type { CurTabSel } from '@/models/curTabSel';
 import { useGrades } from '@/hooks/useGrades';
 import store from '@/store';
+import { emitter } from '@/utils/EventEmiter';
 
 export interface GradeSelItems {
   大一;
@@ -15,6 +16,7 @@ export interface SemesterSelItems{
   小学期;
 }
 
+
 export const useTabSelClick = () => {
   const { getGrades } = useGrades();
   const [curTabSel, tabSelDispatchers] = store.useModel('curTabSel');
@@ -25,7 +27,7 @@ export const useTabSelClick = () => {
     if (res.exist) {
       update({ gradeSel: desc });
     } else {
-      alert('还没有这个学期的成绩哦~');
+      emitter.emit<boolean>('showTab', false);
     }
   };
 
@@ -34,7 +36,7 @@ export const useTabSelClick = () => {
     if (res.exist) {
       update({ semesterSel: desc });
     } else {
-      alert('还没有这个学期的成绩哦~');
+      emitter.emit<boolean>('showTab', false);
     }
   };
 

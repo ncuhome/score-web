@@ -13,22 +13,21 @@
 
 
 .gradesLines{
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  overflow-y: auto;
   height: 100%;
   box-shadow: inset 4px 4px 5px var(--greyLight-2),
   inset -4px -4px 8px var(--white);
   background: var(--greyLight-1);
   border-radius: 3rem;
   padding: 1.5rem;
+  overflow-y: hidden;
+  //display: flex;
+  //flex-direction: column;
 
   .gradesLineHeader{
     display:flex;
     justify-content: start;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     margin-top: 0;
     height: 4rem;
 
@@ -49,28 +48,43 @@
     }
   }
 
-  .gradesLineBody{
+  .gradesArea{
     display:flex;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
     justify-content: start;
     align-items: start;
-    margin-bottom: 1.8rem;
-    font-size: 16px;
+    padding-bottom: 4rem;
 
-    .subjectText{
-      flex: 1;
-      @extend .dataText;
-      text-align: start;
-    }
-    .fractionText{
-      width: 7rem;
-      @extend .dataText;
-      text-align: center;
-    }
-    .creditsText{
-      width: 6rem;
-      @extend .dataText;
-      text-align: center;
-      color:#7F9ADF;
+    .gradesLineBody{
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      margin-bottom: 1.8rem;
+      font-size: 16px;
+      width: 100%;
+
+      .subjectText{
+        flex: 1;
+        @extend .dataText;
+        text-align: start;
+      }
+      .fractionText{
+        width: 7rem;
+        @extend .dataText;
+        text-align: center;
+      }
+      .creditsText{
+        width: 6rem;
+        @extend .dataText;
+        text-align: center;
+        color:#7F9ADF;
+      }
     }
   }
+
+
 }

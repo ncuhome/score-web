@@ -16,6 +16,7 @@ const SelTab: React.FC<SelTabProps> = ({ desc, type = 'gra' }) => {
 
   const onClick = type === 'gra' ? () => gradeSelClick(desc as CurTabSel['gradeSel']) : () => semesterSelClick(desc as CurTabSel['semesterSel']);
   const active = type === 'gra' ? curTabSel.gradeSel === desc : curTabSel.semesterSel === desc;
+
   return (
     <div
       className={clsx([styles.selTab, active && styles.selTabActive])}

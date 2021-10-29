@@ -17,6 +17,7 @@ const App = () => {
   const [grades, gradesDispatchers] = store.useModel('grades');
   const { update } = gradesDispatchers;
 
+  // 拿到所有成绩数据
   useEffect(() => {
     (async () => {
       const res = await fetchGrades();
