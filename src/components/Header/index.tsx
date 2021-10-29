@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import CardInfo from '@/components/Header/CardInfo';
 import SelTab from '@/components/SelTab';
@@ -9,16 +9,23 @@ import Background from '@/components/Background';
 
 const Header = () => {
   const [showTab, setShow] = useState(true);
-
+  const timerRef = useRef<NodeJS.Timeout>();
   useEffect(() => {
     emitter.on<boolean>('showTab', (data) => {
-      console.log(data);
       setShow(data);
-      setTimeout(() => {
+      timerRef.current = setTimeout(() => {
         setShow(true);
-      }, 8000);
+      }, 2000);
     });
   }, []);
+
+  const handleClick = () => {
+    console.log('handleClick');
+    setShow(true);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+  };
 
   return (
     <div className={styles.headerCon}>
@@ -37,10 +44,17 @@ const Header = () => {
             <SelTab desc={'小学期'} type={'sem'} />
           </div>
         </div>
-        <div className={clsx([styles.messageText, !showTab && styles.slideDown])}>
-          <div>没有这个学期的成绩哦~</div>
+        <div
+          onClick={handleClick}
+          className={clsx([styles.messageText, !showTab && styles.slideDown])}
+        >
+          <div>还没有这个学期的成绩哦~</div>
         </div>
-        <div style={{ display: !showTab ? 'flex' : 'none' }} className={clsx([styles.messageText, !showTab && styles.slideDown])}>
+        <div
+          onClick={handleClick}
+          style={{ display: !showTab ? 'flex' : 'none' }}
+          className={clsx([styles.messageText, !showTab && styles.slideDown])}
+        >
           <Background />
         </div>
       </div>

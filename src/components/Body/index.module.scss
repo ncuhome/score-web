@@ -19,9 +19,8 @@
   background: var(--greyLight-1);
   border-radius: 3rem;
   padding: 1.5rem;
-  overflow-y: hidden;
-  //display: flex;
-  //flex-direction: column;
+  overflow: hidden;
+  position: relative;
 
   .gradesLineHeader{
     display:flex;
@@ -29,7 +28,7 @@
     align-items: center;
     margin-bottom: 1rem;
     margin-top: 0;
-    height: 4rem;
+    height: 3rem;
 
     .subjectTitle{
       flex: 1;
@@ -37,12 +36,12 @@
       text-align: start;
     }
     .fractionTitle{
-      width: 7rem;
+      width: 6rem;
       @extend .titleText;
       text-align: center;
     }
     .creditsTitle{
-      width: 6rem;
+      width: 5rem;
       @extend .titleText;
       text-align: center;
     }
@@ -57,6 +56,7 @@
     justify-content: start;
     align-items: start;
     padding-bottom: 4rem;
+    padding-top: 1rem;
 
     .gradesLineBody{
       display: flex;
@@ -71,14 +71,23 @@
         flex: 1;
         @extend .dataText;
         text-align: start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        //white-space: nowrap;
+        -webkit-line-clamp: 1; /* 限制在一个块元素显示的文本的行数 */
+        -webkit-box-orient: vertical; /* 垂直排列 */
+        word-break: break-all;  /* 内容自动换行 */
       }
+
       .fractionText{
-        width: 7rem;
+        width: 6rem;
         @extend .dataText;
         text-align: center;
       }
       .creditsText{
-        width: 6rem;
+        width: 5rem;
         @extend .dataText;
         text-align: center;
         color:#7F9ADF;

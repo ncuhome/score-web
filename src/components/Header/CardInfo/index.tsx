@@ -5,7 +5,7 @@ import { useGrades } from '@/hooks/useGrades';
 import store from '@/store';
 
 
-const MAXGPA = 4;
+const MaxGPA = 4;
 const CardInfo = () => {
   const { getGPA, getUsername } = useGrades();
   const curTabSel = store.useModelState('curTabSel');
@@ -19,7 +19,7 @@ const CardInfo = () => {
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
   const gpaNum = gpa ? parseFloat(gpa) : 0;
-  const strokeDashoffset = 220 - (220 * gpaNum) / 4;
+  const strokeDashoffset = 220 - (220 * gpaNum) / MaxGPA;
   return (
     <div className={styles.cardInfo}>
       <div className={styles.cardPercent}>
