@@ -5,7 +5,7 @@ import { useGrades } from '@/hooks/useGrades';
 import store from '@/store';
 
 
-const ratio = 314 / 4;
+const MAXGPA = 4;
 const CardInfo = () => {
   const { getGPA, getUsername } = useGrades();
   const curTabSel = store.useModelState('curTabSel');
@@ -19,6 +19,7 @@ const CardInfo = () => {
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
   const gpaNum = gpa ? parseFloat(gpa) : 0;
+  const strokeDashoffset = 220 - (220 * gpaNum) / 4;
   return (
     <div className={styles.cardInfo}>
       <div className={styles.cardPercent}>
@@ -31,7 +32,7 @@ const CardInfo = () => {
           </defs>
           <circle
             className={styles.svgCircle}
-            style={{ strokeDashoffset: gpaNum * ratio }}
+            style={{ strokeDashoffset }}
             cx="50"
             cy="50"
             r="35"
