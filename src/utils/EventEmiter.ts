@@ -86,6 +86,7 @@ class MyEventEmitter {
   }
 }
 
+// 参考阿里 ahooks
 export const useEventEmitter = () => {
   const emitterRef = useRef<MyEventEmitter>();
   if (!emitterRef.current) {

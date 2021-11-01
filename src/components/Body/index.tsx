@@ -11,6 +11,7 @@ const Body = () => {
   const [grades, setGrades] = useState<ScoreType[]>([]);
   const [ani, setAni] = useState(false);
 
+  // 切换tab重新获取成绩
   useEffect(() => {
     const res = getGrades(curTabSel);
     if (res.exist) {

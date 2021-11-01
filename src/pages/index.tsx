@@ -20,6 +20,7 @@ const App = () => {
   const { update } = gradesDispatchers;
   const [isShow, setShow] = useState(false);
 
+
   const changeCurTab = ({ gradeSel, semesterSel }: CurTabSel) => {
     tabDispatchers.update({ gradeSel, semesterSel });
     setTimeout(() => {
