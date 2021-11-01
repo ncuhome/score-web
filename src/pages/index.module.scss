@@ -10,7 +10,7 @@
   right: 0;
   background-color: #D5E0F3;//#D5E0F3
   padding: 15px 15px;
-  transition: opacity 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition: opacity 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000);
 
   .header{
     height: 11rem;
@@ -39,6 +39,15 @@
 
 .fade {
   animation: fade 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.background{
+  position:absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform:translate3d(100px,300px,0)
 }
 
 @keyframes fade {

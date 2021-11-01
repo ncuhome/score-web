@@ -37,13 +37,13 @@ const Body = () => {
       }
       <div className={clsx([styles.gradesArea, ani && styles.scaleUp])} >
         {
-          grades && grades.map(({ lesson_name, score, credit }, index) => {
+          grades && grades.map(({ lesson_name, score, credit }) => {
             return (
               <div
                 className={clsx([styles.gradesLineBody])}
                 key={lesson_name + score}
               >
-                <h5 className={styles.subjectText}>{lesson_name}</h5>
+                <div className={styles.subjectText}>{lesson_name}</div>
                 <div className={styles.fractionText}>{score}</div>
                 <div className={styles.creditsText}>{credit}</div>
               </div>

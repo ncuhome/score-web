@@ -11,7 +11,6 @@ import Loading from '@/components/Loading';
 import { tabSelMapping } from '@/utils/tabSelMapping';
 import type { CurTabSel } from '@/models/curTabSel';
 
-
 /**
  * 建议使用真机调试
  */
@@ -46,7 +45,7 @@ const App = () => {
   }
 
   return (
-    <div className={clsx([styles.rootCon])} style={{ opacity: isShow ? 1 : 0 }}>
+    <div className={clsx([styles.rootCon])} style={{ opacity: isShow ? 1 : 0 }} >
       <div className={styles.header}>
         <Header />
       </div>

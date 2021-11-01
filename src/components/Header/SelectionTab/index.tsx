@@ -9,6 +9,7 @@ import Emo from '@/components/Header/SelectionTab/emo';
 const SelectionTab = () => {
   const [showTab, setShow] = useState(true);
   const timerRef = useRef<NodeJS.Timeout>();
+
   useEffect(() => {
     emitter.on<boolean>('showTab', (data) => {
       setShow(data);
