@@ -60,12 +60,14 @@
 
     .gradesLineBody{
       display: flex;
+      grid-template-columns: 1fr 6rem 6rem;
       flex-direction: row;
       justify-content: start;
       align-items: start;
       margin-bottom: 1.8rem;
       font-size: 16px;
       width: 100%;
+      opacity: 1;
 
       .subjectText{
         flex: 1;
@@ -94,6 +96,18 @@
       }
     }
   }
+}
 
+.scaleUp{
+  animation: scaleUp 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+@keyframes scaleUp {
+  from{
+    transform:translate3d(0,0,0) scale(0.8);
+  }
+  to{
+    transform:translate3d(0,0,0) scale(1);
+  }
 
 }

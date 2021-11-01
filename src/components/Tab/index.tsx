@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 import clsx from 'clsx';
-import { useTabSelClick } from '@/components/SelTab/tabItemUtils';
+import { useTabSelClick } from '@/components/Tab/tabItemUtils';
 import type { CurTabSel } from '@/models/curTabSel';
 import store from '@/store';
 

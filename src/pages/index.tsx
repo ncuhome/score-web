@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 
 import Header from '@/components/Header';
@@ -8,6 +8,8 @@ import { fetchGrades } from '@/request';
 import store from '@/store';
 import type { UserGrades } from '@/models/grades';
 import Loading from '@/components/Loading';
+import { tabSelMapping } from '@/utils/tabSelMapping';
+import type { CurTabSel } from '@/models/curTabSel';
 
 
 /**
@@ -15,14 +17,26 @@ import Loading from '@/components/Loading';
  */
 const App = () => {
   const [grades, gradesDispatchers] = store.useModel('grades');
+  const tabDispatchers = store.useModelDispatchers('curTabSel');
   const { update } = gradesDispatchers;
+  const [isShow, setShow] = useState(false);
+
+  const changeCurTab = ({ gradeSel, semesterSel }: CurTabSel) => {
+    tabDispatchers.update({ gradeSel, semesterSel });
+    setTimeout(() => {
+      setShow(true);
+    }, 0);
+  };
 
   // 拿到所有成绩数据
   useEffect(() => {
     (async () => {
       const res = await fetchGrades();
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       update({ scores: res.scores, username: res.xm, terms_gpa: res.terms_gpa } as UserGrades);
+      const key = Object.keys(tabSelMapping)[res.total - 1];
+      const gradeSel = key.slice(0, 2);
+      const semesterSel = key.slice(3);
+      changeCurTab({ gradeSel, semesterSel } as CurTabSel);
     }
     )();
   }, []);
@@ -32,7 +46,7 @@ const App = () => {
   }
 
   return (
-    <div className={clsx([styles.rootCon, styles.fade])}>
+    <div className={clsx([styles.rootCon])} style={{ opacity: isShow ? 1 : 0 }}>
       <div className={styles.header}>
         <Header />
       </div>

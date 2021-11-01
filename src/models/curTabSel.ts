@@ -1,4 +1,4 @@
-import type { GradeSelItems, SemesterSelItems } from '@/components/SelTab/tabItemUtils';
+import type { GradeSelItems, SemesterSelItems } from '@/components/Tab/tabItemUtils';
 
 export interface CurTabSel{
   gradeSel: keyof GradeSelItems;
