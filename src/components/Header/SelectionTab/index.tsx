@@ -28,7 +28,7 @@ const SelectionTab = () => {
 
   return (
     <>
-      <div className={styles.selection} >
+      <div className={clsx([styles.slideUp, styles.selection])} >
         <div className={clsx([styles.tabWrapper, !showTab && styles.slideDown])}>
           <div className={styles.gradeSel} >
             <SelTab desc={'大一'} type={'gra'} />
@@ -37,9 +37,9 @@ const SelectionTab = () => {
             <SelTab desc={'大四'} type={'gra'} />
           </div>
           <div className={styles.semesterSel}>
+            <SelTab desc={'小学期'} type={'sem'} />
             <SelTab desc={'上学期'} type={'sem'} />
             <SelTab desc={'下学期'} type={'sem'} />
-            <SelTab desc={'小学期'} type={'sem'} />
           </div>
         </div>
         {
