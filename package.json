@@ -44,7 +44,6 @@
     "blueimp-md5": "^2.18.0",
     "clsx": "^1.1.1",
     "ga-lite": "^2.1.0",
-    "ice": "^3.7.60",
     "lodash.get": "^4.4.2",
     "mincu-react": "^2.0.0-alpha.1",
     "react": "^17.0.2",
