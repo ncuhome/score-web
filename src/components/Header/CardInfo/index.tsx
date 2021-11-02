@@ -21,7 +21,7 @@ const CardInfo = () => {
   const gpaNum = gpa ? parseFloat(gpa) : 0;
   const strokeDashoffset = 220 - (220 * gpaNum) / MaxGPA;
   return (
-    <div className={styles.cardInfo}>
+    <div className={clsx([styles.slideUp, styles.cardInfo])}>
       <div className={styles.cardPercent}>
         <svg className={styles.percentSvg}>
           <defs>

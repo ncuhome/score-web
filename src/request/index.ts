@@ -1,5 +1,5 @@
 import network from 'mincu-network';
-import { ResType } from '@/utils/data';
+import { scoreRes } from '@/utils/data';
 
 /**
  * 获取基础信息
@@ -12,12 +12,13 @@ export const getBasic = async (): Promise<any> => {
 };
 
 export const fetchGrades = () => {
-  return new Promise<ResType>(((resolve) => {
-    network.fetch({
-      url: 'http://api.ncuos.com/api/info/scores',
-      method: 'get',
-    }).then((res) => {
-      resolve(res.data);
-    });
-  }));
+  return scoreRes;
+  // return new Promise<ResType>(((resolve) => {
+  //   network.fetch({
+  //     url: 'http://api.ncuos.com/api/info/scores',
+  //     method: 'get',
+  //   }).then((res) => {
+  //     resolve(res.data);
+  //   });
+  // }));
 };

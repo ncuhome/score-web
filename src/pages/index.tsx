@@ -23,9 +23,10 @@ const App = () => {
 
   const changeCurTab = ({ gradeSel, semesterSel }: CurTabSel) => {
     tabDispatchers.update({ gradeSel, semesterSel });
+    //  避免闪现默认成绩
     setTimeout(() => {
       setShow(true);
-    }, 0);
+    }, 100);
   };
 
   // 拿到所有成绩数据
@@ -41,20 +42,21 @@ const App = () => {
     )();
   }, []);
 
-  if (grades.scores.length === 0) {
-    return <Loading />;
+  if (isShow && grades.scores.length !== 0) {
+    return (
+      <div className={clsx([styles.rootCon])} >
+        <div className={styles.header}>
+          <Header />
+        </div>
+        <div
+          className={clsx([styles.body, styles.slideUp])}
+        >
+          <Body />
+        </div>
+      </div>
+    );
   }
-
-  return (
-    <div className={clsx([styles.rootCon])} style={{ opacity: isShow ? 1 : 0 }} >
-      <div className={styles.header}>
-        <Header />
-      </div>
-      <div className={clsx([styles.body])} >
-        <Body />
-      </div>
-    </div>
-  );
+  return <Loading />;
 };
 
 export default App;

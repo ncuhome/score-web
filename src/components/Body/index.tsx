@@ -28,7 +28,7 @@ const Body = () => {
       {
         useMemo(() => {
           return (
-            <div className={styles.gradesLineHeader}>
+            <div className={clsx([styles.gradesLineHeader])}>
               <div className={styles.subjectTitle}>学科</div>
               <div className={styles.fractionTitle}>成绩</div>
               <div className={styles.creditsTitle}>学分</div>

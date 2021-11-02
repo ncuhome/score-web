@@ -1,7 +1,7 @@
 .rootCon{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -29,6 +29,8 @@
     background: var(--greyLight-1);
     box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
     padding: 1rem;
+    transition: opacity cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    //animation: slideUp 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000);
   }
 
   .footer{
@@ -53,6 +55,20 @@
 @keyframes fade {
   to {
     opacity: 1;
+  }
+}
+
+
+.slideUp{
+  animation: slideUp 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
+@keyframes slideUp {
+  from{
+    transform: translate3d(0,120px,0);
+  }
+  to{
+    transform: translate3d(0,0,0);
   }
 }
 

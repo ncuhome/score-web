@@ -18,15 +18,15 @@
   inset -4px -4px 8px var(--white);
   background: var(--greyLight-1);
   border-radius: 3rem;
-  padding: 1.5rem;
   overflow: hidden;
   position: relative;
+  padding: 1rem;
 
   .gradesLineHeader{
     display:flex;
     justify-content: start;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-top: 0;
     height: 3rem;
 
@@ -55,7 +55,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     padding-top: 1rem;
 
     .gradesLineBody{
@@ -109,5 +109,8 @@
   to{
     transform:translate3d(0,0,0) scale(1);
   }
-
 }
+
+
+
+
