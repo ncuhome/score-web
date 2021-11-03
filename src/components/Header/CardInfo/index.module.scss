@@ -1,4 +1,58 @@
-.cardInfo {
+
+.tranProp{
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+
+
+.panel {
+  width: 11rem;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+}
+
+.panel .front {
+  height: inherit;
+  position: absolute;
+  z-index: 900;
+  transform: rotateX(0deg) rotateY(0deg);
+  @extend .tranProp;
+}
+
+.panel .back {
+  height: inherit;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  transform: rotateY(-180deg);
+  @extend .tranProp;
+}
+
+.panel.flip .front {
+  z-index: 900;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.panel.flip .back {
+  z-index: 1000;
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+
+.frontBox{
   width: 11rem;
   display: flex;
   flex-direction: column;
@@ -7,9 +61,10 @@
   border-radius: 2rem;
   background: #ebf5fc;
   box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
-  padding: 0.5rem;
   margin-right: 0.5rem;
   border: 1px solid white;
+  position: relative;
+  z-index: 100;
 
   .cardPercent {
     position: relative;
@@ -22,8 +77,8 @@
     font-size: 1.6rem;
     font-weight: 600;
     color: #6B6EE8;
+    text-align: center;
   }
-
   .cardNumber {
     position: absolute;
     color: var(--greyDark);
@@ -43,6 +98,17 @@
       color: #7F9ADF;
     }
   }
+}
+
+
+.backBox{
+  background: #ebf5fc;
+  box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
+  width: 11rem;
+  height: 100%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
 .percentSvg {
@@ -86,6 +152,7 @@
   box-shadow: 6px 6px 8px #d5e0f3,
   -2px -2px 8px #FFF;
 }
+
 
 .slideUp{
   animation: slideUp 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000);
