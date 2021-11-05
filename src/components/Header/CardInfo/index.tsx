@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import { useGrades } from '@/hooks/useGrades';
 import store from '@/store';
 
+// 满分绩点
 const MaxGPA = 4;
+
 const CardInfo = () => {
   const { getGPA, getUsername } = useGrades();
   const curTabSel = store.useModelState('curTabSel');
@@ -57,7 +59,8 @@ const CardInfo = () => {
       </div>
       <div className={styles.back}>
         <div className={styles.backBox}>
-          <p>背面</p>
+          <div style={{ marginBottom: 10 }}>更多功能</div>
+          <div>敬请期待</div>
         </div>
       </div>
     </div>
