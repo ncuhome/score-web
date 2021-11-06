@@ -12,17 +12,29 @@ const CardInfo = () => {
   const curTabSel = store.useModelState('curTabSel');
   const [gpa, setGpa] = useState('');
   const [back, setBack] = useState(false);
+  const [backText, setBackText] = useState('敬请期待');
 
   useEffect(() => {
     const res = getGPA(curTabSel);
     if (res.exist) {
       setGpa(res.data as string);
+    } else {
+      setGpa('');
     }
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
   // 百分比计算式
   const gpaNum = gpa ? parseFloat(gpa) : 0;
   const strokeDashoffset = 220 - (220 * gpaNum) / MaxGPA;
+  useEffect(() => {
+    if (!gpa) {
+      setBack(true);
+      setBackText('暂无绩点');
+    } else {
+      setBack(false);
+      setBackText('敬请期待');
+    }
+  }, [gpa]);
 
   return (
     <div className={clsx([styles.panel, back && styles.flip, styles.slideUp])} onClick={() => setBack(!back)}>
@@ -59,8 +71,7 @@ const CardInfo = () => {
       </div>
       <div className={styles.back}>
         <div className={styles.backBox}>
-          <div style={{ marginBottom: 10 }}>更多功能</div>
-          <div>敬请期待</div>
+          <div>{backText}</div>
         </div>
       </div>
     </div>

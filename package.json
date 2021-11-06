@@ -5,13 +5,11 @@
   "devDependencies": {
     "@iceworks/spec": "^1.0.0",
     "@types/google.analytics": "^0.0.40",
-    "@types/mockjs": "^1.0.4",
-    "@types/react": "^16.9.20",
-    "@types/react-dom": "^16.9.5",
-    "eslint": "^6.8.0",
-    "ice.js": "2.0.0-rc.3",
-    "mincu-debug": "2.1.0-alpha.0",
-    "mockjs": "^1.1.0"
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.0.0",
+    "ice.js": "2.1.2",
+    "mincu-debug": "2.1.0-alpha.0"
   },
   "scripts": {
     "start": "mincud 'icejs start'",
@@ -41,7 +39,6 @@
   "private": true,
   "originTemplate": "@alifd/scaffold-simple",
   "dependencies": {
-    "blueimp-md5": "^2.18.0",
     "clsx": "^1.1.1",
     "ga-lite": "^2.1.0",
     "lodash.get": "^4.4.2",
@@ -50,8 +47,7 @@
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-useportal": "^1.0.14"
+    "react-router-dom": "^5.2.0"
   },
   "proxyConfig": {
     "/": {

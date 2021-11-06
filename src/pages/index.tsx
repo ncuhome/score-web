@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     (async () => {
       const res = await fetchGrades();
-      update({ scores: res.scores, username: res.xm, terms_gpa: res.terms_gpa } as UserGrades);
+      update({ scores: res.scores, username: res.xm, terms_gpa: res.terms_gpa_split } as UserGrades);
       const key = Object.keys(tabSelMapping)[res.total - 1];
       const gradeSel = key.slice(0, 2);
       const semesterSel = key.slice(3);
