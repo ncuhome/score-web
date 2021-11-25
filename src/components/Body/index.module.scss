@@ -1,54 +1,85 @@
-
-.titleText{
-  font-size: 18px;
-  font-weight: 600;
-  color: #7F9ADF;
-}
-
-.dataText{
+.text {
   font-size: 16px;
-  font-weight: 400;
-  color: #325BC6;
+  font-weight: 500;
+  color: #1347f1;
+  letter-spacing: 1px;
 }
 
+.dataText {
+  font-size: 15px;
+  color: #292929;
+  letter-spacing: 0.4px;
+}
 
-.gradesLines{
+.courseTitle {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: #292929;
+  text-align: start;
+}
+
+.typeTitle {
+  flex: 1;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: #646464;
+  margin-top: 2px;
+  text-align: start;
+}
+
+.gradesLines {
+  border-radius: 10px;
   height: 100%;
-  box-shadow: inset 4px 4px 5px var(--greyLight-2),
-  inset -4px -4px 8px var(--white);
-  background: var(--greyLight-1);
-  border-radius: 3rem;
-  overflow: hidden;
   position: relative;
   padding: 1rem;
 
-  .gradesLineHeader{
-    display:flex;
+  .gradesLineHeader {
+    display: flex;
     justify-content: start;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     margin-top: 0;
+    position: relative;
     height: 3rem;
+    width: 100%;
 
-    .subjectTitle{
+    &:after {
+      content: '';
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      position: absolute;
+      left: -9px;
+      right: -9px;
+      top: -4px;
+      bottom: -2px;
+      border-radius: 7px;
+      background: rgb(244, 246, 250);
+      box-shadow: 3px 3px 8px 0px rgba(201, 214, 237, .8);
+      z-index: -1;
+    }
+
+    .subjectTitle {
       flex: 1;
-      @extend .titleText;
+      @extend .text;
       text-align: start;
     }
-    .fractionTitle{
+
+    .fractionTitle {
       width: 6rem;
-      @extend .titleText;
+      @extend .text;
       text-align: center;
     }
-    .creditsTitle{
+
+    .creditsTitle {
       width: 5rem;
-      @extend .titleText;
+      @extend .text;
       text-align: center;
     }
   }
 
-  .gradesArea{
-    display:flex;
+  .gradesArea {
+    display: flex;
     overflow-y: auto;
     height: 100%;
     width: 100%;
@@ -56,20 +87,24 @@
     justify-content: start;
     align-items: start;
     padding-bottom: 3rem;
-    padding-top: 1rem;
+    padding-top: 14px;
 
-    .gradesLineBody{
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+
+    .gradesLineBody {
       display: flex;
       grid-template-columns: 1fr 6rem 6rem;
       flex-direction: row;
       justify-content: start;
-      align-items: start;
-      margin-bottom: 1.8rem;
+      align-items: center;
+      margin-bottom: 12px;
       font-size: 16px;
       width: 100%;
       opacity: 1;
 
-      .subjectText{
+      .subjectText {
         flex: 1;
         @extend .dataText;
         text-align: start;
@@ -78,39 +113,36 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         //white-space: nowrap;
+        font-weight: 500;
         -webkit-line-clamp: 1; /* 限制在一个块元素显示的文本的行数 */
         -webkit-box-orient: vertical; /* 垂直排列 */
-        word-break: break-all;  /* 内容自动换行 */
+        word-break: break-all; /* 内容自动换行 */
       }
 
-      .fractionText{
+      .fractionText {
         width: 6rem;
         @extend .dataText;
         text-align: center;
       }
-      .creditsText{
+
+      .creditsText {
         width: 5rem;
         @extend .dataText;
         text-align: center;
-        color:#7F9ADF;
       }
     }
   }
 }
 
-.scaleUp{
-  animation: scaleUp 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+.scaleUp {
+  animation: scaleUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes scaleUp {
-  from{
-    transform:translate3d(0,0,0) scale(0.8);
+  from {
+    transform: translate3d(0, 0, 0) scale(0.8);
   }
-  to{
-    transform:translate3d(0,0,0) scale(1);
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
-
-
-
-

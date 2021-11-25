@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import clsx from 'clsx';
 import SelTab from '@/components/Tab';
@@ -26,11 +26,29 @@ const SelectionTab = () => {
     }
   };
 
+  const renderEmpty = useMemo(() => {
+    return (
+      <>
+        <div onClick={handleClick} className={clsx([styles.emo, !showTab && styles.slideDown])}>
+          <div>
+            <Emo />
+          </div>
+        </div>
+        <div onClick={handleClick} className={clsx([styles.messageText, !showTab && styles.slideDown])}>
+          <div>还没有这个学期的成绩哦~</div>
+        </div>
+        <div style={{ display: !showTab ? 'block' : 'none' }} className={clsx([styles.bg])}>
+          <Background />
+        </div>
+      </>
+    );
+  }, [showTab]);
+
   return (
     <>
-      <div className={clsx([styles.slideUp, styles.selection])} >
+      <div className={clsx([styles.slideUp, styles.selection])}>
         <div className={clsx([styles.tabWrapper, !showTab && styles.slideDown])}>
-          <div className={styles.gradeSel} >
+          <div className={styles.gradeSel}>
             <SelTab desc={'大一'} type={'gra'} />
             <SelTab desc={'大二'} type={'gra'} />
             <SelTab desc={'大三'} type={'gra'} />
@@ -42,32 +60,7 @@ const SelectionTab = () => {
             <SelTab desc={'下学期'} type={'sem'} />
           </div>
         </div>
-        {
-          useMemo(() => {
-            return (
-              <Fragment>
-                <div onClick={handleClick} className={clsx([styles.emo, !showTab && styles.slideDown])}>
-                  <div>
-                    <Emo />
-                  </div>
-                </div>
-                <div
-                  onClick={handleClick}
-                  className={clsx([styles.messageText, !showTab && styles.slideDown])}
-                >
-                  <div>还没有这个学期的成绩哦~</div>
-                </div>
-                <div
-                  style={{ display: !showTab ? 'block' : 'none' }}
-                  className={clsx([styles.bg])}
-                >
-                  <Background />
-                </div>
-              </Fragment>
-            );
-          }, [showTab])
-        }
-
+        {renderEmpty}
       </div>
     </>
   );

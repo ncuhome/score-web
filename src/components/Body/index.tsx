@@ -23,36 +23,34 @@ const Body = () => {
     }
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
+  const renderHeader = useMemo(() => {
+    return (
+      <div className={clsx([styles.gradesLineHeader])}>
+        <div className={styles.subjectTitle}>学科</div>
+        <div className={styles.fractionTitle}>成绩</div>
+        <div className={styles.creditsTitle}>学分</div>
+      </div>
+    );
+  }, []);
+
   return (
     <div className={styles.gradesLines}>
-      {
-        useMemo(() => {
-          return (
-            <div className={clsx([styles.gradesLineHeader])}>
-              <div className={styles.subjectTitle}>学科</div>
-              <div className={styles.fractionTitle}>成绩</div>
-              <div className={styles.creditsTitle}>学分</div>
-            </div>
-          );
-        }, [])
-      }
-      <div className={clsx([styles.gradesArea, ani && styles.scaleUp])} >
-        {
-          grades && grades.map(({ lesson_name, score, credit }) => {
+      {renderHeader}
+      <div className={clsx([styles.gradesArea, ani && styles.scaleUp])}>
+        {grades &&
+          grades.map(({ lesson_name, score, credit, course_type }) => {
             return (
-              <div
-                className={clsx([styles.gradesLineBody])}
-                key={lesson_name + score}
-              >
-                <div className={styles.subjectText}>{lesson_name}</div>
+              <div className={clsx([styles.gradesLineBody])} key={lesson_name + score}>
+                <div style={{ flex: 1 }}>
+                  <div className={styles.courseTitle}>{lesson_name}</div>
+                  <div className={styles.typeTitle}>{course_type}</div>
+                </div>
                 <div className={styles.fractionText}>{score}</div>
                 <div className={styles.creditsText}>{credit}</div>
               </div>
             );
-          })
-        }
+          })}
       </div>
-
     </div>
   );
 };

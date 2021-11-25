@@ -10,12 +10,11 @@ export interface GradeSelItems {
   大四;
 }
 
-export interface SemesterSelItems{
+export interface SemesterSelItems {
   上学期;
   下学期;
   小学期;
 }
-
 
 export const useTabSelClick = () => {
   const { getGrades } = useGrades();
@@ -39,7 +38,6 @@ export const useTabSelClick = () => {
       emitter.emit<boolean>('showTab', false);
     }
   };
-
 
   return {
     gradeSelClick,

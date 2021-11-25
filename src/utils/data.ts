@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export const scoreRes = {
   xh: '6105119047',
@@ -12,15 +11,7 @@ export const scoreRes = {
   msg: '完成',
   total: 7,
   xm: '李清栋',
-  terms: [
-    '2019-2020-0',
-    '2019-2020-1',
-    '2019-2020-2',
-    '2020-2021-0',
-    '2020-2021-1',
-    '2020-2021-2',
-    '2021-2022-0',
-  ],
+  terms: ['2019-2020-0', '2019-2020-1', '2019-2020-2', '2020-2021-0', '2020-2021-1', '2020-2021-2', '2021-2022-0'],
   scores: [
     [
       {
@@ -769,7 +760,7 @@ export interface ResType {
   };
 }
 
-export interface ScoreType{
+export interface ScoreType {
   exam_type: string;
   score: number;
   include: boolean;

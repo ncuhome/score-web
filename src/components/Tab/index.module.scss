@@ -1,16 +1,16 @@
-
-.selTab{
-  color: #567AD5;
+.selTab {
   font-size: 1.4rem;
   transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  color: rgb(59, 59, 59);
 }
 
-.selTabActive{
+.selTabActive {
+  font-weight: 500;
   font-size: 1.4rem;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 9px;
-  box-shadow: 3px 3px 8px #C9D6ED;
-  background: #2FCBF3;
-  color: black;
-  font-weight: 400;
+  box-shadow: 3px 3px 8px #c9d6ed;
+  background: #f1f1f1;
+  color: #222;
 }

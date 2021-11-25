@@ -66,7 +66,7 @@ const CardInfo = () => {
               <div className={styles.pointsText}>{gpa}</div>
             </div>
           </div>
-          <div className={styles.nameText}>{getUsername()}</div>
+          {/* <div className={styles.nameText}>{getUsername()}</div> */}
         </div>
       </div>
       <div className={styles.back}>

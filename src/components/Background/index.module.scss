@@ -1,33 +1,68 @@
+$blue-size: 200px;
+$red-size: 180px;
 
-.background{
-  height: 100%;
-  width: 100%;
-  position: relative;
+$left-blue: -20px;
+$top-red: 10vh;
+
+$left-blue-active: 10px;
+$top-red-active: 15vh;
+
+$cubic: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+.background {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
-
-  .particle {
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  @for $i from 1 through 30 {
-    @keyframes particle-animation-#{$i} {
-      100% {
-        transform: translate3d((random(90) * 1vh), -(random(100) * 1vh), (random(90) * 1px));
-      }
-    }
-
-    .particle:nth-child(#{$i}){
-      animation: particle-animation-#{$i} 60s infinite;
-      $size: random(5) + 5 + px;
-      opacity: random(70)/100;
-      height: $size;
-      width: $size;
-      animation-delay: -$i * .2s;
-      transform: translate3d((random(100) * 1vw), (random(30) * 1vh), (random(90) * 1px));
-      background: hsl(random(360), 70%, 50%);
-    }
-  }
-
 }
 
+.left {
+  position: absolute;
+  top: 70vh;
+  left: -20px;
+  width: $blue-size;
+  height: $blue-size;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #6bbbff 0%, #2c9af8 100%);
+
+  animation: shake-blue 4s $cubic infinite;
+}
+
+.right {
+  position: absolute;
+  top: 10vh;
+  right: -100px;
+  width: $red-size;
+  height: $red-size;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff8678 0%, #f43929 100%);
+
+  animation: shake-red 4s $cubic infinite;
+}
+
+@keyframes shake-blue {
+  0% {
+    left: $left-blue;
+  }
+  50% {
+    left: $left-blue-active;
+  }
+  100% {
+    left: $left-blue;
+  }
+}
+
+@keyframes shake-red {
+  0% {
+    top: $top-red;
+  }
+  50% {
+    top: $top-red-active;
+  }
+  100% {
+    top: $top-red;
+  }
+}

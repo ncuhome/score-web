@@ -9,9 +9,10 @@
     "@types/react-dom": "^17.0.11",
     "eslint": "^7.0.0",
     "ice.js": "2.1.2",
-    "mincu-debug": "2.1.0-alpha.0"
+    "mincu-debug": "2.2.0"
   },
   "scripts": {
+    "dev": "icejs start",
     "start": "mincud 'icejs start'",
     "start:analyzer": "mincud 'icejs start --analyzer'",
     "build": "icejs build",

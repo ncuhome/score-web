@@ -10,6 +10,7 @@ import type { UserGrades } from '@/models/grades';
 import Loading from '@/components/Loading';
 import { tabSelMapping } from '@/utils/tabSelMapping';
 import type { CurTabSel } from '@/models/curTabSel';
+import Background from '@/components/Background';
 
 /**
  * 建议使用真机调试
@@ -19,7 +20,6 @@ const App = () => {
   const tabDispatchers = store.useModelDispatchers('curTabSel');
   const { update } = gradesDispatchers;
   const [isShow, setShow] = useState(false);
-
 
   const changeCurTab = ({ gradeSel, semesterSel }: CurTabSel) => {
     tabDispatchers.update({ gradeSel, semesterSel });
@@ -38,24 +38,23 @@ const App = () => {
       const gradeSel = key.slice(0, 2);
       const semesterSel = key.slice(3);
       changeCurTab({ gradeSel, semesterSel } as CurTabSel);
-    }
-    )();
+    })();
   }, []);
 
   if (isShow && grades.scores.length !== 0) {
     return (
-      <div className={clsx([styles.rootCon])} >
+      <div className={clsx([styles.root])}>
         <div className={styles.header}>
           <Header />
         </div>
-        <div
-          className={clsx([styles.body, styles.slideUp])}
-        >
+        <div className={clsx([styles.body, styles.slideUp])}>
           <Body />
         </div>
+        <Background />
       </div>
     );
   }
+
   return <Loading />;
 };
 

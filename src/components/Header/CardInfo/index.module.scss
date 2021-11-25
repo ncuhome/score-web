@@ -1,19 +1,20 @@
-.tranProp{
+$block-size: 110px;
+
+.tranProp {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .panel {
-  width: 11rem;
-  height: 13rem;
+  width: $block-size;
+  height: $block-size;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
   padding: 0.5rem;
   margin-right: 0.5rem;
   position: relative;
@@ -22,7 +23,6 @@
 }
 
 .panel .front {
-  height: inherit;
   position: absolute;
   z-index: 900;
   transform: rotateX(0deg) rotateY(0deg);
@@ -50,13 +50,14 @@
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
 
-.frontBox{
-  width: 11rem;
+.frontBox {
+  width: $block-size;
+  height: $block-size;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 10px;
   background: #ebf5fc;
   box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
   margin-right: 0.5rem;
@@ -71,10 +72,10 @@
     align-items: center;
     margin-bottom: 0.6rem;
   }
-  .nameText{
+  .nameText {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #6B6EE8;
+    color: #6b6ee8;
     text-align: center;
   }
   .cardNumber {
@@ -84,32 +85,31 @@
     font-family: 'DM Sans', sans-serif;
     text-align: center;
 
-    .GPAText{
+    .GPAText {
       font-size: 1.5rem;
       font-weight: 500;
-      color: #6B6EE8;
+      color: #6b6ee8;
       margin-bottom: 5px;
     }
-    .pointsText{
+    .pointsText {
       font-size: 1.4rem;
       font-weight: 500;
-      color: #7F9ADF;
+      color: #7f9adf;
     }
   }
 }
 
-
-.backBox{
+.backBox {
   background: #ebf5fc;
   box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
-  width: 11rem;
+  width: $block-size;
   height: 100%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:#6B6EE8;
+  color: #6b6ee8;
   font-size: 1.6rem;
 }
 
@@ -136,35 +136,31 @@
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
-  box-shadow: 6px 6px 8px var(--greyLight-2),
-  -6px -6px 8px #FFF;
+  box-shadow: 6px 6px 8px var(--greyLight-2), -6px -6px 8px #fff;
   background: #ebf5fc;
 }
 
 .circleMedium {
   width: 8rem;
   height: 8rem;
-  box-shadow: inset 8px 8px 10px var(--greyLight-2),
-  inset -4px -4px 8px #FFF;
+  box-shadow: inset 8px 8px 10px var(--greyLight-2), inset -4px -4px 8px #fff;
 }
 
 .circleSmall {
   width: 6rem;
   height: 6rem;
-  box-shadow: 6px 6px 8px var(--greyLight-2),
-  -2px -2px 8px #FFF;
+  box-shadow: 6px 6px 8px var(--greyLight-2), -2px -2px 8px #fff;
 }
 
-
-.slideUp{
-  animation: slideUp 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+.slideUp {
+  animation: slideUp 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 @keyframes slideUp {
-  from{
-    transform: translate3d(0,120px,0);
+  from {
+    transform: translate3d(0, 120px, 0);
   }
-  to{
-    transform: translate3d(0,0,0);
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
