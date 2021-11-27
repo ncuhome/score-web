@@ -1,12 +1,6 @@
 $blue-size: 200px;
 $red-size: 180px;
 
-$left-blue: -20px;
-$top-red: 10vh;
-
-$left-blue-active: 10px;
-$top-red-active: 15vh;
-
 $cubic: cubic-bezier(0.39, 0.575, 0.565, 1);
 
 .background {
@@ -21,14 +15,10 @@ $cubic: cubic-bezier(0.39, 0.575, 0.565, 1);
 
 .left {
   position: absolute;
-  top: 70vh;
-  left: -20px;
   width: $blue-size;
   height: $blue-size;
   border-radius: 50%;
-  background: linear-gradient(180deg, #6bbbff 0%, #2c9af8 100%);
-
-  animation: shake-blue 4s $cubic infinite;
+  background: linear-gradient(180deg, #6bbbff 0%, #1d95ff 100%);
 }
 
 .right {
@@ -39,30 +29,4 @@ $cubic: cubic-bezier(0.39, 0.575, 0.565, 1);
   height: $red-size;
   border-radius: 50%;
   background: linear-gradient(180deg, #ff8678 0%, #f43929 100%);
-
-  animation: shake-red 4s $cubic infinite;
-}
-
-@keyframes shake-blue {
-  0% {
-    left: $left-blue;
-  }
-  50% {
-    left: $left-blue-active;
-  }
-  100% {
-    left: $left-blue;
-  }
-}
-
-@keyframes shake-red {
-  0% {
-    top: $top-red;
-  }
-  50% {
-    top: $top-red-active;
-  }
-  100% {
-    top: $top-red;
-  }
 }
