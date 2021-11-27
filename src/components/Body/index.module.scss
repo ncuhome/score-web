@@ -47,15 +47,12 @@
 
     &:after {
       content: '';
-      border: 1px solid rgba(255, 255, 255, 0.18);
       position: absolute;
       left: -9px;
       right: -9px;
       top: -4px;
       bottom: -2px;
-      border-radius: 7px;
-      background: rgb(244, 246, 250);
-      box-shadow: 3px 3px 8px 0px rgba(201, 214, 237, .8);
+      border-radius: 7px;      
       z-index: -1;
     }
 
