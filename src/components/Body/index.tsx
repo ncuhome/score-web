@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import store from '@/store';
 import { useGrades } from '@/hooks/useGrades';
@@ -10,6 +10,7 @@ const Body = () => {
   const curTabSel = store.useModelState('curTabSel');
   const [grades, setGrades] = useState<ScoreType[]>([]);
   const [ani, setAni] = useState(false);
+  const aniRef = useRef<NodeJS.Timeout>();
 
   // 切换tab重新获取成绩
   useEffect(() => {
@@ -17,9 +18,13 @@ const Body = () => {
     if (res.exist) {
       setGrades(res.data as ScoreType[]);
       setAni(true);
-      setTimeout(() => {
+      if (aniRef.current) {
+        clearTimeout(aniRef.current);
+      }
+      aniRef.current = setTimeout(() => {
         setAni(false);
-      }, 500);
+        aniRef.current = undefined;
+      }, 400);
     }
   }, [curTabSel.gradeSel, curTabSel.semesterSel]);
 
