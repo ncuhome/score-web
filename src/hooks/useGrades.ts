@@ -3,16 +3,20 @@ import store from '@/store';
 import { tabSelMapping } from '@/utils/tabSelMapping';
 import type { ScoreType } from '@/utils/data';
 
-export interface GetGradesRes{
+export interface GetGradesRes {
   exist: boolean;
-  data: ScoreType[]|null;
+  data: ScoreType[] | null;
 }
 
-export interface GetGPARes{
+export interface GetGPARes {
   exist: boolean;
-  data: string|null;
+  data: string | null;
 }
 
+export interface ITermTreeItem {
+  grade: string;
+  terms: number[];
+}
 
 export const useGrades = () => {
   const grades = store.useModelState('grades');
@@ -34,6 +38,7 @@ export const useGrades = () => {
     const { gradeSel, semesterSel } = curTabSel;
     const index = tabSelMapping[`${gradeSel}#${semesterSel}`];
     const gpaKeys = Object.keys(grades.terms_gpa).sort();
+
     const term = gpaKeys[index - 1];
     let res: GetGPARes;
     const gpa = grades.terms_gpa[term];

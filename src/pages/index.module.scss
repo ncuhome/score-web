@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, #d6dfee 0%, #F1F7FF 48.96%, #F1F7FF 100%);
+  background: linear-gradient(180deg, #F1F7FF 0%, #F1F7FF 48.96%, #F1F7FF 100%);
   padding: 0 16px;
   transition: opacity 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
   overflow: hidden;
@@ -30,8 +30,8 @@
     padding: 1rem;
     transition: opacity cubic-bezier(0.39, 0.575, 0.565, 1);
 
-    background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: var(--background);
+    box-shadow: 0 8px 32px 0 rgba(31, 67, 135, 0.26);
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

@@ -1,22 +1,23 @@
 .text {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: #1347f1;
   letter-spacing: 1px;
 }
 
 .dataText {
-  font-size: 15px;
-  color: #292929;
+  font-size: 16px;
+  color: var(--black);
   letter-spacing: 0.4px;
+  font-family: 'DIN Alternate';
 }
 
 .courseTitle {
   flex: 1;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.6px;
-  color: #292929;
+  color: var(--black);
   text-align: start;
 }
 
@@ -24,7 +25,8 @@
   flex: 1;
   font-size: 12px;
   letter-spacing: 0.6px;
-  color: #646464;
+  color: var(--black);
+  opacity: 0.86;
   margin-top: 2px;
   text-align: start;
 }
@@ -44,17 +46,6 @@
     position: relative;
     height: 3rem;
     width: 100%;
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: -9px;
-      right: -9px;
-      top: -4px;
-      bottom: -2px;
-      border-radius: 7px;
-      z-index: -1;
-    }
 
     .subjectTitle {
       flex: 1;
@@ -87,6 +78,10 @@
     padding-top: 14px;
 
     &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
       width: 0 !important;
     }
 
@@ -110,7 +105,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         //white-space: nowrap;
-        font-weight: 500;
+        font-weight: 600;
         -webkit-line-clamp: 1; /* 限制在一个块元素显示的文本的行数 */
         -webkit-box-orient: vertical; /* 垂直排列 */
         word-break: break-all; /* 内容自动换行 */
@@ -126,6 +121,7 @@
         width: 5rem;
         @extend .dataText;
         text-align: center;
+        opacity: 0.68;
       }
     }
   }

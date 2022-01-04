@@ -58,9 +58,8 @@ $block-size: 110px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: #ebf5fc;
+  background: var(--background);
   box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
-  margin-right: 0.5rem;
   border: 1px solid white;
   position: relative;
   z-index: 100;
@@ -70,37 +69,37 @@ $block-size: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.6rem;
   }
   .nameText {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #6b6ee8;
+    color: #2e2e2e;
     text-align: center;
   }
+
   .cardNumber {
     position: absolute;
-    color: var(--greyDark);
     font-size: 2rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DIN Alternate';
     text-align: center;
+    font-weight: 500;
 
     .GPAText {
       font-size: 1.5rem;
-      font-weight: 500;
-      color: #6b6ee8;
-      margin-bottom: 5px;
+      color: #2e2e2e;
+      margin-bottom: 2px;
     }
+
     .pointsText {
       font-size: 1.4rem;
-      font-weight: 500;
-      color: #7f9adf;
+      font-weight: 600;
+      color: #ecbd57;
     }
   }
 }
 
 .backBox {
-  background: #ebf5fc;
+  background: var(--background);
   box-shadow: 0 20px 30px rgba(100, 131, 177, 0.2);
   width: $block-size;
   height: 100%;
@@ -137,7 +136,7 @@ $block-size: 110px;
   height: 9rem;
   border-radius: 50%;
   box-shadow: 6px 6px 8px var(--greyLight-2), -6px -6px 8px #fff;
-  background: #ebf5fc;
+  background: #fff;
 }
 
 .circleMedium {

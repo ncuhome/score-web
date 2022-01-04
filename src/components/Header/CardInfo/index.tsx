@@ -44,7 +44,7 @@ const CardInfo = () => {
             <svg className={styles.percentSvg}>
               <defs>
                 <radialGradient id="gradient" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
-                  <stop offset="30%" stopColor="var(--primary-dark)" />
+                  <stop offset="40%" stopColor="var(--primary-dark)" />
                   <stop offset="100%" stopColor="var(--primary-light)" />
                 </radialGradient>
               </defs>

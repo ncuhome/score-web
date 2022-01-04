@@ -2,6 +2,7 @@ import type { ScoreType } from '@/utils/data';
 
 export interface UserGrades{
   username: string;
+  terms: string[];
   terms_gpa: {
     [time: string]: string;
   };
