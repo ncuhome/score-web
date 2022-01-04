@@ -1,44 +1,24 @@
 {
   "name": "ncu-report",
   "version": "0.1.0",
+  "private": true,
   "description": "使用 TypeScript，未使用任何 UI 库。",
-  "devDependencies": {
-    "@iceworks/spec": "^1.0.0",
-    "@types/google.analytics": "^0.0.40",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
-    "eslint": "^7.0.0",
-    "ice.js": "^2.4.3",
-    "mincu-debug": "2.2.0"
-  },
-  "scripts": {
-    "dev": "icejs start",
-    "start": "mincud 'icejs start'",
-    "start:analyzer": "mincud 'icejs start --analyzer'",
-    "build": "icejs build",
-    "build:analyzer": "mincud 'icejs build --analyzer'",
-    "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
-    "eslint:fix": "npm run eslint -- --fix",
-    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
-    "stylelint:fix": "npm run stylelint -- --fix"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/alibaba-fusion/materials/tree/master/scaffolds/scaffold-simple"
   },
-  "ideMode": {
-    "name": "ice-react"
+  "scripts": {
+    "build": "icejs build",
+    "build:analyzer": "mincud 'icejs build --analyzer'",
+    "dev": "icejs start",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "eslint:fix": "npm run eslint -- --fix",
+    "lint": "npm run eslint && npm run stylelint",
+    "start": "mincud 'icejs start'",
+    "start:analyzer": "mincud 'icejs start --analyzer'",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "stylelint:fix": "npm run stylelint -- --fix"
   },
-  "iceworks": {
-    "type": "react",
-    "adapter": "adapter-react-v3"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "private": true,
-  "originTemplate": "@alifd/scaffold-simple",
   "dependencies": {
     "clsx": "^1.1.1",
     "ga-lite": "^2.1.0",
@@ -51,6 +31,26 @@
     "react-router-dom": "^5.2.0",
     "react-spring": "^9.3.2"
   },
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.0",
+    "@types/google.analytics": "^0.0.40",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.0.0",
+    "ice.js": "2.1.2",
+    "mincu-debug": "2.2.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v3"
+  },
+  "ideMode": {
+    "name": "ice-react"
+  },
+  "originTemplate": "@alifd/scaffold-simple",
   "proxyConfig": {
     "/": {
       "enable": true,
