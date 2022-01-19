@@ -1,0 +1,93 @@
+.selection {
+  flex: 1;
+  position: relative;
+  margin-left: 1rem;
+  padding: 4px;
+  overflow: hidden;
+
+  background: var(--background);
+  box-shadow: 0 8px 32px 0 rgba(31, 67, 135, 0.26);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  .tabWrapper {
+    display: flex;
+    height: 10rem;
+    flex-direction: column;
+
+    .gradeSel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 5px;
+      border-radius: 2rem;
+    }
+
+    .semesterSel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 2rem;
+    }
+  }
+}
+
+.tabWrapper,
+.messageText,
+.emo {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.infoGroup {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.messageText {
+  @extend .infoGroup;
+  top: -6rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  z-index: 100;
+  color: #1447F1;
+}
+
+.emo {
+  @extend .infoGroup;
+  top: -12rem;
+  z-index: 100;
+  width: 50px;
+  margin: auto;
+}
+
+.bg {
+  @extend .infoGroup;
+  display: block;
+  top: -8.5rem;
+  z-index: 99;
+}
+
+.slideDown {
+  transform: translate3d(0, 14rem, 0); //优化
+}
+
+.slideUp {
+  animation: slideUp 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 120px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

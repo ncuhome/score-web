@@ -1,8 +1,8 @@
 import { runApp, IAppConfig } from 'ice';
 import React from 'react';
-import 'antd-mobile/dist/antd-mobile.css';
 
-import MincuProvider from '@/components/MincuProvider';
+// TODO
+// import MincuProvider from '@/components/MincuProvider';
 import { GaProvider } from '@/components/GaProvider';
 
 if (process.env.NODE_ENV === 'development') {
@@ -14,7 +14,8 @@ if (process.env.NODE_ENV === 'development') {
 const appConfig: IAppConfig = {
   app: {
     rootId: 'ice-container',
-    addProvider: ({ children }) => <MincuProvider><GaProvider>{children}</GaProvider></MincuProvider>,
+    // TODO
+    addProvider: ({ children }) => <GaProvider>{children}</GaProvider>,
   },
   router: {
     type: 'browser',

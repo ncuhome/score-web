@@ -1,0 +1,141 @@
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1347f1;
+  letter-spacing: 1px;
+}
+
+.dataText {
+  font-size: 16px;
+  color: var(--black);
+  letter-spacing: 0.4px;
+  font-family: 'DIN Alternate';
+}
+
+.courseTitle {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: var(--black);
+  text-align: start;
+}
+
+.typeTitle {
+  flex: 1;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: var(--black);
+  opacity: 0.86;
+  margin-top: 2px;
+  text-align: start;
+}
+
+.gradesLines {
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  padding: 1rem;
+
+  .gradesLineHeader {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    margin-top: 0;
+    position: relative;
+    height: 3rem;
+    width: 100%;
+
+    .subjectTitle {
+      flex: 1;
+      @extend .text;
+      text-align: start;
+    }
+
+    .fractionTitle {
+      width: 6rem;
+      @extend .text;
+      text-align: center;
+    }
+
+    .creditsTitle {
+      width: 5rem;
+      @extend .text;
+      text-align: center;
+    }
+  }
+
+  .gradesArea {
+    display: flex;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 3rem;
+    padding-top: 14px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+
+    .gradesLineBody {
+      display: flex;
+      grid-template-columns: 1fr 6rem 6rem;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 16px;
+      width: 100%;
+      opacity: 1;
+
+      .subjectText {
+        flex: 1;
+        @extend .dataText;
+        text-align: start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        //white-space: nowrap;
+        font-weight: 600;
+        -webkit-line-clamp: 1; /* 限制在一个块元素显示的文本的行数 */
+        -webkit-box-orient: vertical; /* 垂直排列 */
+        word-break: break-all; /* 内容自动换行 */
+      }
+
+      .fractionText {
+        width: 6rem;
+        @extend .dataText;
+        text-align: center;
+      }
+
+      .creditsText {
+        width: 5rem;
+        @extend .dataText;
+        text-align: center;
+        opacity: 0.68;
+      }
+    }
+  }
+}
+
+.scaleUp {
+  animation: scaleUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes scaleUp {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}

@@ -1,0 +1,31 @@
+$blue-size: 200px;
+$red-size: 180px;
+
+$cubic: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.left {
+  position: absolute;
+  width: $blue-size;
+  height: $blue-size;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #6bbbff 0%, #1d95ff 100%);
+}
+
+.right {
+  position: absolute;
+  top: 10vh;
+  right: -100px;
+  width: $red-size;
+  height: $red-size;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff8678 0%, #f43929 100%);
+}
