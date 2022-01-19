@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './index.module.scss';
 import clsx from 'clsx';
 import { useGrades } from '@/hooks/useGrades';
@@ -8,11 +8,11 @@ import store from '@/store';
 const MaxGPA = 4;
 
 const CardInfo = () => {
-  const { getGPA, getUsername } = useGrades();
+  const { getGPA } = useGrades();
   const curTabSel = store.useModelState('curTabSel');
   const [gpa, setGpa] = useState('');
   const [back, setBack] = useState(false);
-  const [backText, setBackText] = useState('敬请期待');
+  const [down,setDown] = useState(false);
 
   useEffect(() => {
     const res = getGPA(curTabSel);
@@ -26,22 +26,37 @@ const CardInfo = () => {
   // 百分比计算式
   const gpaNum = gpa ? parseFloat(gpa) : 0;
   const strokeDashoffset = 220 - (220 * gpaNum) / MaxGPA;
+
   useEffect(() => {
     if (!gpa) {
       setBack(true);
-      setBackText('暂无绩点');
     } else {
       setBack(false);
-      setBackText('敬请期待');
     }
   }, [gpa]);
 
+  const handleClickCard = ()=>{
+    setDown(!down)
+  }
+
+  const renderEmpty = () => {
+    return (
+      <>
+        <div className={clsx([styles.rank,down && styles.slideDown])}>
+          <div>排名</div>
+          <div>12</div>
+        </div>
+      </>
+    );
+  };
+
+
   return (
-    <div className={clsx([styles.panel, back && styles.flip, styles.slideUp])} onClick={() => setBack(!back)}>
-      <div className={styles.front}>
-        <div className={styles.frontBox}>
-          <div className={styles.cardPercent}>
-            <svg className={styles.percentSvg}>
+    <div className={clsx([styles.panel,back && styles.flip, styles.slideUp])}>
+      <div className={clsx([styles.front])} onClick={handleClickCard}>
+        <div className={clsx([styles.frontBox])}>
+          <div className={clsx([styles.progressBox,down&&styles.slideDown])}>
+            <svg className={styles.progress}>
               <defs>
                 <radialGradient id="gradient" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
                   <stop offset="40%" stopColor="var(--primary-dark)" />
@@ -66,12 +81,13 @@ const CardInfo = () => {
               <div className={styles.pointsText}>{gpa}</div>
             </div>
           </div>
-          {/* <div className={styles.nameText}>{getUsername()}</div> */}
+          {renderEmpty()}
         </div>
       </div>
       <div className={styles.back}>
-        <div className={styles.backBox}>
-          <div>{backText}</div>
+        <div className={clsx([styles.backBox])}>
+          <img className={styles.emo} src='/public/sad.svg' alt={'sad'}/>
+          <div>暂无绩点</div>
         </div>
       </div>
     </div>

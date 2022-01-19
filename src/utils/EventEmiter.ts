@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-
 interface Listener {
   name: string;
   callback: Array<(data: any) => void>;
@@ -85,14 +83,5 @@ class MyEventEmitter {
     });
   }
 }
-
-// 参考阿里 ahooks
-export const useEventEmitter = () => {
-  const emitterRef = useRef<MyEventEmitter>();
-  if (!emitterRef.current) {
-    emitterRef.current = new MyEventEmitter();
-  }
-  return emitterRef.current as MyEventEmitter;
-};
 
 export const emitter = new MyEventEmitter();

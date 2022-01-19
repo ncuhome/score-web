@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import SelTab from '@/components/Tab';
 import Background from '@/components/Background';
 import { emitter } from '@/utils/EventEmiter';
-import Emo from '@/components/Header/SelectionTab/emo';
 
 const SelectionTab = () => {
   const [showTab, setShow] = useState(true);
@@ -31,11 +30,11 @@ const SelectionTab = () => {
       <>
         <div onClick={handleClick} className={clsx([styles.emo, !showTab && styles.slideDown])}>
           <div>
-            <Emo />
+            <img src='/public/thinking.svg' style={{width:50}} alt={'sad'}/>
           </div>
         </div>
         <div onClick={handleClick} className={clsx([styles.messageText, !showTab && styles.slideDown])}>
-          <div>还没有这个学期的成绩哦~</div>
+          <div>还没有出成绩吗?</div>
         </div>
         <div style={{ display: !showTab ? 'block' : 'none' }} className={clsx([styles.bg])}>
           <Background />
